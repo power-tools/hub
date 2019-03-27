@@ -17,7 +17,7 @@ If you want to make your own PowerTools solution you should go to the [Wiki](htt
 
 There are many ways to contribute to PowerTools.
 
-* [Submit bugs](https://github.com/power-tools/hub/issues) and help us verify fixes as they are checked in.
+* [Submit Issues](https://github.com/power-tools/hub/issues) and help us verify fixes as they are checked in.
 * Press the fork button and get started on your own PowerTools Solutions and Enhancements
 * Make a Pull Request and your changes may make it into the master branch for public release.
 * The GitHub Page is very bare-bones at the moment.  If you have the chops I'm sure there's tons of room for improvement there.
