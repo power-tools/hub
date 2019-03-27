@@ -1,6 +1,6 @@
 # PowerTools / Hub
 
-The PowerTools solution is best described on the GitHub Page but the goal in general is to create utilities that can be hosted in any Dynamics 365 Instance and aide customizers and configurers in modifying the system in the new PowerApps world.
+PowerTools are best described on the GitHub Page but the goal is to create utilities that can be hosted in any Dynamics 365 Instance and aide customizers and configurers in modifying the system in the new PowerApps world.  As enhancements and new solutions materialize look for new folders and new versions of the solution here.
 
 ## Installing
 
