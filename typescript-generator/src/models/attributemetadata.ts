@@ -3,4 +3,5 @@ export interface IAttributeMetadata {
     AttributeType: string;
     LogicalName: string;
     MetadataId: string;
+    IsRequiredForForm: boolean;
   }
