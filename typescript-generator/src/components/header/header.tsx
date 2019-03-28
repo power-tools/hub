@@ -9,7 +9,7 @@ const Header = () => (
       <Text block={true} variant="superLarge">
         TypeScript Generator
       </Text>
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/xrm-rangers/power-tools">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/power-tools/hub">
         <img src={gitHubLogo} alt="gitHubLogo" />
       </a>
     </Stack>
