@@ -10,11 +10,19 @@ export const processOption = (selectedEntity: IComboBoxOption) => {
   fetch(
     `${url}/api/data/v9.0/EntityDefinitions(${
       selectedEntity.key
-    })/Attributes?$select=LogicalName,AttributeType`
+    })/Attributes?$select=LogicalName,AttributeType,IsRequiredForForm`
   )
     .then(response => response.json())
     .then(data => {
       const attributes: IAttributeMetadata[] = data.value;
+      const selectedEntityNoSpaces = selectedEntity.text.replace(/ +/g, "");
+      
+      attributes.forEach((attr) => {
+        if (!attr.IsRequiredForForm){
+          attr.LogicalName += "?";
+        }
+      })
+      
       const newObj = Object.assign(
         {},
         ...attributes.map(item => ({
@@ -48,7 +56,8 @@ export const processOption = (selectedEntity: IComboBoxOption) => {
       JsonToTS(newObj).forEach((typeInterface: string) => {
         tsoutput+=typeInterface;
       })
-      tsoutput = tsoutput.replace('RootObject', `I${selectedEntity.text}`);
-      fileDownload(tsoutput, `${selectedEntity.text}.d.ts`);
+      tsoutput = tsoutput.replace('RootObject', `I${selectedEntityNoSpaces}`);
+      tsoutput = tsoutput.replace(/'/g,'');
+      fileDownload(tsoutput, `${selectedEntityNoSpaces}.d.ts`);
     });
 };
