@@ -11,7 +11,7 @@ Import PowerTools_0_0_2_0.zip into your Dynamics 365 CE Instance
 
 ## Learning More
 
-If you want to make your own PowerTools solution you should go to the [Wiki](https://github.com/power-tools/hub/wiki) and get acquainted with the technologies and methods involved.
+If you want to make your own PowerTools solution you should go to the [Wiki](https://github.com/power-tools/hub/wiki) and get acquainted with the technologies and methods involved.  You can also visit the discord channel and ask questions along the way: <https://discord.gg/HvkM6dG>
 
 ## Contribute
 
