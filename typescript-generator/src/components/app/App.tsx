@@ -1,6 +1,6 @@
 import { initializeIcons } from '@uifabric/icons';
-import { DefaultButton } from "office-ui-fabric-react/lib/components/Button/DefaultButton/DefaultButton";
-import { VirtualizedComboBox } from "office-ui-fabric-react/lib/components/ComboBox/VirtualizedComboBox";
+import { DefaultButton } from "office-ui-fabric-react/lib/Button";
+import { VirtualizedComboBox } from "office-ui-fabric-react/lib/ComboBox";
 import { Stack } from "office-ui-fabric-react/lib/Stack";
 import * as React from "react";
 import Header from "../header/header";
