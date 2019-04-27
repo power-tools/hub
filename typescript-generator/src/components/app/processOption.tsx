@@ -1,12 +1,12 @@
 import fileDownload from "js-file-download";
 import { IComboBoxOption } from "office-ui-fabric-react/lib/components/ComboBox/ComboBox.types";
-import { IAttributeMetadata } from "src/models/attributemetadata";
+import { IAttributeMetadata } from "../../models/attributemetadata";
 
 // tslint:disable-next-line: no-var-requires
 const JsonToTS = require('json-to-ts');
 
 export const processOption = (selectedEntity: IComboBoxOption) => {
-  const url = parent.Xrm.Page.context.getClientUrl();
+  const url = window.parent.Xrm.Page.context.getClientUrl();
   fetch(
     `${url}/api/data/v9.0/EntityDefinitions(${
       selectedEntity.key
