@@ -1,33 +1,48 @@
-import { initializeIcons } from '@uifabric/icons';
+import { initializeIcons } from "@uifabric/icons";
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
-import { VirtualizedComboBox } from "office-ui-fabric-react/lib/ComboBox";
 import { Stack } from "office-ui-fabric-react/lib/Stack";
 import * as React from "react";
-import Header from "../header/header";
-import { processOption } from './processOption';
-import { useOptions } from "./useOptions";
+import { processOption } from "./processOption";
+import { PowerToolsHeader, EntityList } from "pt-components";
+import { IComboBoxOption, IComboBox } from "office-ui-fabric-react/lib/components/ComboBox/ComboBox.types";
 
 // Register icons and pull the fonts from the default SharePoint CDN:
 initializeIcons();
 
-const App = () => {
-  const options = useOptions(); 
-
+const App = () => {  
+  const [selectedOptions, setSelectedOptions] = React.useState<IComboBoxOption[]>([]);
+  
   const onClickGenerate = () => {
-    // * filter out the selected options
-    const selectedOptions = options.filter(o => {
-      return o.selected;
-    });
-
     selectedOptions.forEach(o => {
       processOption(o);
     });
   };
 
+  // OnChange of the EntityList handle the change by adding or removing from selectedOptions
+  const handleChange = (event:React.FormEvent<IComboBox>, option?: IComboBoxOption, index?: number, value?: string) => {
+    let tempOptions = selectedOptions;
+    if (option != null && option.selected){
+      tempOptions.push(option)
+      setSelectedOptions(tempOptions);
+    }
+    else if (option != null) {
+      var i = tempOptions.findIndex(function(o){
+        return o.key === option.key;
+      });
+      tempOptions.splice(i,1);
+      setSelectedOptions(tempOptions);
+    }
+  };
+
   return (
     <div className="App">
       <Stack gap={10} padding={10}>
-        <Header />
+        <PowerToolsHeader
+          title="TypeScript Generator"
+          repoUrl="https://github.com/power-tools/hub"
+          description="Choose your entities and click Generate to get TypeScript helper classes
+          for the selected entities"
+        />
         <br />
         <Stack.Item align="auto">
           <DefaultButton
@@ -38,9 +53,8 @@ const App = () => {
           />
         </Stack.Item>
         <Stack.Item align="start">
-          <VirtualizedComboBox
-            options={options}
-            autoComplete="on"
+          <EntityList
+            onChange={handleChange}
             multiSelect={true}
             placeholder="Select Entities"
             label="Dynamics Entities"

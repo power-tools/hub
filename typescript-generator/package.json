@@ -12,6 +12,7 @@
     "js-file-download": "^0.4.5",
     "json-to-ts": "^1.5.4",
     "office-ui-fabric-react": "^6.172.0",
+    "pt-components": "^1.0.1",
     "pt-react-scripts": "2.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
