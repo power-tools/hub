@@ -14,6 +14,11 @@ To start building your own PowerTools try out our flavor of create react app (af
 $ yarn create react-app my-new-pt --scripts-version pt-react-scripts --typescript
 ```
 
+To add commonly used components to your Power Tools Solution:
+```bash
+$ yarn add pt-components
+```
+
 ## Learning More
 
 If you want to understand more about PowerTools you should check out the [Wiki](https://github.com/power-tools/hub/wiki) and get acquainted with the technologies and methods involved.  You can also visit the discord channel and ask questions along your learning/building path: <https://discord.gg/HvkM6dG> . I have it on my phone and monitor it regularly.
