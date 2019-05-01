@@ -6,7 +6,7 @@ PowerTools are best described on the GitHub Page but the goal is to create utili
 
 For the latest stable version:
 ```bash
-Import PowerTools_0_1_0_0.zip into your Dynamics 365 CE Instance
+Import PowerTools_0_2_0_0.zip into your Dynamics 365 CE Instance
 ```
 
 To start building your own PowerTools try out our flavor of create react app (after reading through the wiki and learning about the underlying structure):
